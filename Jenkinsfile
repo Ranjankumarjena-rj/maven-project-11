@@ -1,9 +1,9 @@
 pipeline {
-    agent { label 'sleve-3-win' }
+    agent { label 'slave-linux' }
 
     tools {
-        maven 'MAVEN_WIN_HOME2'     // Maven name as configured in Jenkins
-        jdk 'JDK_WIN_HOME2'        // JDK name as configured in Jenkins
+        maven 'M2_HOME_LINUX'     // Maven name as configured in Jenkins
+        jdk 'JAVA_HOME_LINUX'        // JDK name as configured in Jenkins
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Maven install') {
             steps {
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
     }
