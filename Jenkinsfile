@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'sleve-3-win' }
 
     tools {
         maven 'M2_HOME'     // Maven name as configured in Jenkins
